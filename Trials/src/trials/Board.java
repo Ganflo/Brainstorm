@@ -13,9 +13,22 @@ import java.util.ArrayList;
  */
 public class Board {
     
-    private ArrayList board;
+    private ArrayList<Tile> board;
+    private int size;
     
-    public Board() {
-        
+    
+    public Board(int in) {
+        size = in;
+        board = new ArrayList();
+        for(int x = 0;x < size;x++) {
+            board.add(new Tile(0));
+        }
+    }
+    
+    public int getSize() {
+        return size;
+    }
+    public ArrayList<Tile> getBoard() {
+        return board;
     }
 }

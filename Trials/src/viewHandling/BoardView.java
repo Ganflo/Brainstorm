@@ -5,10 +5,28 @@
  */
 package viewHandling;
 
+import java.util.ArrayList;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import trials.Board;
+
 /**
  *
  * @author Devin
  */
 public class BoardView {
     
+    private ArrayList<ImageView> view;
+    
+    public BoardView(Board in) {
+        view = new ArrayList<>();
+        for(int x = 0;x < in.getSize();x++) {
+            view.add(new ImageView(new Image(in.getBoard().get(x).getImage())));
+        }
+    }
+    
+    
+    public ArrayList<ImageView> getView() {
+        return view;
+    }
 }
